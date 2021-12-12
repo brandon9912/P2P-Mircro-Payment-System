@@ -204,10 +204,11 @@ void sending()
     string list;//record username from server
     list = server_reply;
     bzero(server_reply, 2000);
-    //cout << list;
+
     string user;
     printf("Please enter your user name:");
     cin >> user;
+
     string payee;
     printf("Please enter recepient user name:");
     cin >> payee;
@@ -215,6 +216,7 @@ void sending()
     int pound2 = list.find("#", n + payee.length() + 1);
     string payee_ip = list.substr(n + payee.length() + 1, pound2 - (n + payee.length() + 1));
     string payee_port = list.substr(pound2 + 1, 4);
+    
     string amount;
     printf("Please enter payment amount:");
     cin >> amount;
